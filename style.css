@@ -1,1 +1,376 @@
-/* Add you CSS here */
+/* These variables make it easy to change the site's colors later. */
+:root {
+	--ink: #17201e;
+	--muted: #61706b;
+	--paper: #f5f1e9;
+	--cream: #fffdf8;
+	--green: #1d5b50;
+	--yellow: #eacb6a;
+	--line: #d8d8ca;
+}
+
+/* This keeps widths and spacing predictable for the whole page. */
+* {
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	margin: 0;
+	color: var(--ink);
+	background-color: var(--paper);
+	font-family: Georgia, 'Times New Roman', serif;
+	line-height: 1.6;
+}
+
+.site-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	max-width: 1180px;
+	margin: 0 auto;
+	padding: 28px 30px;
+}
+
+.logo {
+	color: var(--green);
+	font-size: 1.6rem;
+	font-weight: bold;
+	letter-spacing: 2px;
+	text-decoration: none;
+}
+
+.logo span,
+.eyebrow,
+.project-number {
+	color: var(--green);
+}
+
+nav {
+	display: flex;
+	gap: 28px;
+}
+
+nav a,
+.text-link {
+	color: var(--ink);
+	font-family: Arial, sans-serif;
+	font-size: 0.85rem;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+nav a:hover,
+.text-link:hover {
+	color: var(--green);
+}
+
+.hero {
+	display: flex;
+	align-items: center;
+	gap: 7%;
+	max-width: 1180px;
+	min-height: 600px;
+	margin: 0 auto;
+	padding: 65px 30px 100px;
+}
+
+.hero-text {
+	flex: 1;
+}
+
+.hero-image {
+	flex: 0 1 45%;
+	position: relative;
+}
+
+.hero-image::before {
+	position: absolute;
+	top: -18px;
+	right: -18px;
+	width: 100%;
+	height: 100%;
+	border: 1px solid var(--green);
+	content: '';
+}
+
+.hero-image img {
+	display: block;
+	position: relative;
+	width: 100%;
+	height: 430px;
+	object-fit: cover;
+}
+
+.eyebrow {
+	margin: 0 0 16px;
+	font-family: Arial, sans-serif;
+	font-size: 0.75rem;
+	font-weight: bold;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+p {
+	margin-top: 0;
+}
+
+h1 {
+	max-width: 650px;
+	margin-bottom: 24px;
+	font-size: clamp(3rem, 6vw, 5.5rem);
+	font-weight: normal;
+	line-height: 1.02;
+}
+
+h2 {
+	max-width: 610px;
+	margin-bottom: 25px;
+	font-size: clamp(2.2rem, 4vw, 4rem);
+	font-weight: normal;
+	line-height: 1.08;
+}
+
+h3 {
+	margin-bottom: 8px;
+	font-size: 1.45rem;
+}
+
+.intro {
+	max-width: 470px;
+	margin-bottom: 32px;
+	color: var(--muted);
+	font-size: 1.15rem;
+}
+
+.button {
+	display: inline-block;
+	padding: 14px 20px;
+	color: var(--cream);
+	background-color: var(--green);
+	font-family: Arial, sans-serif;
+	font-size: 0.85rem;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.button:hover {
+	background-color: var(--ink);
+}
+
+.button span,
+.text-link span {
+	margin-left: 10px;
+}
+
+.section {
+	padding: 100px max(30px, calc((100% - 1120px) / 2));
+}
+
+.about {
+	background-color: var(--cream);
+}
+
+.section-heading {
+	margin-bottom: 50px;
+}
+
+.about-content {
+	display: flex;
+	align-items: center;
+	gap: 8%;
+}
+
+.profile-picture {
+	width: 210px;
+	height: 250px;
+	object-fit: cover;
+}
+
+.about-content div {
+	max-width: 560px;
+	color: var(--muted);
+	font-size: 1.05rem;
+}
+
+.about-content .text-link {
+	display: inline-block;
+	margin-top: 15px;
+}
+
+.skills {
+	background-color: var(--yellow);
+}
+
+.skill-list,
+.project-list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 18px;
+}
+
+.skill-item {
+	flex: 1 1 210px;
+	padding: 25px 0;
+	border-top: 1px solid var(--ink);
+}
+
+.skill-item span {
+	color: var(--green);
+	font-family: Arial, sans-serif;
+	font-size: 0.75rem;
+}
+
+.skill-icon {
+	display: block;
+	margin: 22px 0 16px;
+	color: var(--green);
+	font-size: 2rem;
+}
+
+.skill-item p,
+.project-card p,
+.contact > p:not(.eyebrow) {
+	color: var(--muted);
+}
+
+.projects {
+	color: var(--cream);
+	background-color: var(--green);
+}
+
+.projects .eyebrow,
+.projects .project-number {
+	color: var(--yellow);
+}
+
+.projects-heading > p:last-child {
+	color: #d9e0d9;
+}
+
+.project-card {
+	display: flex;
+	flex: 1 1 430px;
+	min-height: 310px;
+	background-color: var(--ink);
+}
+
+.project-card img {
+	width: 43%;
+	object-fit: cover;
+}
+
+.project-card-content {
+	padding: 28px;
+}
+
+.project-number {
+	margin-bottom: 15px;
+	font-family: Arial, sans-serif;
+	font-size: 0.75rem;
+	font-weight: bold;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+
+.project-card h3 {
+	color: var(--cream);
+}
+
+.project-card .text-link {
+	display: inline-block;
+	margin-top: 12px;
+	color: var(--yellow);
+}
+
+.project-card-light {
+	background-color: var(--yellow);
+}
+
+.project-card-light h3,
+.project-card-light .text-link {
+	color: var(--ink);
+}
+
+.contact {
+	background-color: var(--cream);
+}
+
+.contact > p:not(.eyebrow) {
+	max-width: 450px;
+	margin-bottom: 28px;
+	font-size: 1.1rem;
+}
+
+.button-dark {
+	background-color: var(--ink);
+}
+
+footer {
+	display: flex;
+	justify-content: space-between;
+	padding: 25px max(30px, calc((100% - 1120px) / 2));
+	color: #d9e0d9;
+	background-color: var(--ink);
+	font-family: Arial, sans-serif;
+	font-size: 0.75rem;
+}
+
+@media (max-width: 700px) {
+	.site-header {
+		align-items: flex-start;
+	}
+
+	nav {
+		flex-direction: column;
+		gap: 5px;
+		text-align: right;
+	}
+
+	.hero {
+		display: block;
+		padding-top: 35px;
+	}
+
+	.hero-image {
+		margin: 65px 18px 0 0;
+	}
+
+	.hero-image img {
+		height: 300px;
+	}
+
+	.section {
+		padding-top: 70px;
+		padding-bottom: 70px;
+	}
+
+	.about-content {
+		display: block;
+	}
+
+	.profile-picture {
+		width: 160px;
+		height: 190px;
+		margin-bottom: 25px;
+	}
+
+	.project-card {
+		display: block;
+	}
+
+	.project-card img {
+		width: 100%;
+		height: 190px;
+	}
+
+	footer {
+		display: block;
+	}
+}
